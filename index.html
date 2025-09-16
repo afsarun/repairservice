@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FixMaster Pro | Professional Handyman Services</title>
+    <meta
+      name="description"
+      content="24/7 trusted handyman services for all your home repair and maintenance needs. Fast, reliable, and professional."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #0066cc;
+        --primary-dark: #0055aa;
+        --secondary: #ff9900;
+        --light: #f8f9fa;
+        --dark: #333333;
+        --gray: #6c757d;
+        --light-gray: #e9ecef;
+        --white: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        background-color: var(--primary);
+        color: var(--white);
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background-color: var(--secondary);
+      }
+
+      .btn-secondary:hover {
+        background-color: #e68a00;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: var(--white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo i {
+        font-size: 28px;
+        color: var(--primary);
+        margin-right: 10px;
+      }
+
+      .logo-text {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        color: var(--dark);
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin-left: 25px;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--dark);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80")
+            no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        color: var(--white);
+        margin-top: 70px;
+      }
+
+      .hero-content {
+        max-width: 600px;
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: var(--light);
+      }
+
+      .hero-title {
+        font-size: 48px;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero-description {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .hero-cta {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+
+      .hero-phone {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .hero-phone i {
+        margin-right: 10px;
+        color: var(--secondary);
+      }
+
+      .request-form {
+        background-color: var(--white);
+        padding: 25px;
+        border-radius: 8px;
+        max-width: 400px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .request-form h3 {
+        color: var(--dark);
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--light-gray);
+        border-radius: 4px;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .form-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: var(--primary);
+        color: var(--white);
+        border: none;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .form-btn:hover {
+        background-color: var(--primary-dark);
+      }
+
+      /* Services Section */
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 36px;
+        color: var(--dark);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: var(--primary);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .service-card {
+        background-color: var(--white);
+        border-radius: 8px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-icon {
+        font-size: 48px;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      .service-card h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+      }
+
+      /* Stats Section */
+      .stats {
+        background-color: var(--primary);
+        color: var(--white);
+        padding: 60px 0;
+      }
+
+      .stats-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .stat-number {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .stat-label {
+        font-size: 18px;
+      }
+
+      /* How It Works Section */
+      .steps-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 50px;
+      }
+
+      .step {
+        flex: 0 0 calc(25% - 30px);
+        text-align: center;
+        padding: 20px;
+      }
+
+      .step-number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        background-color: var(--primary);
+        color: var(--white);
+        border-radius: 50%;
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0 auto 20px;
+      }
+
+      .step h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background-color: var(--light);
+        text-align: center;
+        padding: 80px 0;
+      }
+
+      .cta-section h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+      }
+
+      /* Offers Section */
+      .offers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .offer-card {
+        background-color: var(--primary);
+        color: var(--white);
+        border-radius: 8px;
+        padding: 30px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .offer-badge {
+        position: absolute;
+        top: 20px;
+        right: -35px;
+        background-color: var(--secondary);
+        color: var(--white);
+        padding: 5px 40px;
+        transform: rotate(45deg);
+        font-weight: 700;
+      }
+
+      .offer-card h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .offer-card p {
+        margin-bottom: 20px;
+      }
+
+      /* Why Choose Us Section */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .feature-icon {
+        font-size: 36px;
+        color: var(--primary);
+        margin-right: 20px;
+        flex-shrink: 0;
+      }
+
+      .feature-content h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      /* Testimonials Section */
+      .testimonials {
+        background-color: var(--light);
+      }
+
+      .testimonial-card {
+        background-color: var(--white);
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin: 20px auto;
+        max-width: 800px;
+        text-align: center;
+      }
+
+      .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 20px;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: var(--white);
+        padding: 60px 0 20px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-col h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-col h3:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary);
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: var(--light);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--primary);
+      }
+
+      .footer-contact li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+      }
+
+      .footer-contact i {
+        margin-right: 10px;
+        color: var(--primary);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .hero-content {
+          text-align: center;
+          margin: 0 auto;
+        }
+
+        .hero-cta {
+          justify-content: center;
+        }
+
+        .step {
+          flex: 0 0 calc(50% - 30px);
+          margin-bottom: 30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu {
+          display: none;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background-color: var(--white);
+          flex-direction: column;
+          padding: 20px;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-menu.active {
+          display: flex;
+        }
+
+        .nav-menu li {
+          margin: 10px 0;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .hero-title {
+          font-size: 36px;
+        }
+
+        .hero-cta {
+          flex-direction: column;
+        }
+
+        .request-form {
+          margin: 0 auto;
+        }
+
+        .stats-container {
+          flex-direction: column;
+        }
+
+        .stat-item {
+          margin-bottom: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <i class="fas fa-tools"></i>
+          <span class="logo-text">HomeFix Experts</span>
+        </div>
+
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+
+        <a href="#" class="btn">Book Appointment</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-subtitle">24/7 Reliable Home Services</p>
+          <h1 class="hero-title">
+            Your Trusted Partner for Repairs & Renovations
+          </h1>
+          <p class="hero-description">
+            From quick fixes to complete remodeling, our certified experts are
+            ready to deliver professional service whenever you need it.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#" class="btn btn-secondary">Get a Service Quote</a>
+            <div class="hero-phone">
+              <i class="fas fa-phone"></i>
+              <span>+1 800-456-7890</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="request-form">
+          <h3>Request a Service</h3>
+          <form>
+            <div class="form-group">
+              <input type="text" placeholder="Type of Service" required />
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Your Address" required />
+            </div>
+            <div class="form-group">
+              <input type="date" placeholder="Preferred Date" required />
+            </div>
+            <button type="submit" class="form-btn">Submit Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Professional Services You Can Trust</h2>
+          <p>Comprehensive solutions for every corner of your home</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-paint-roller"></i>
+            </div>
+            <h3>Home Renovation</h3>
+            <p>
+              Transform your living space with expert remodeling, modern design,
+              and quality craftsmanship for kitchens, bathrooms, and more.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-faucet"></i>
+            </div>
+            <h3>Plumbing Solutions</h3>
+            <p>
+              Quick and reliable plumbing services including leak repair,
+              fixture installation, drain cleaning, and water system
+              maintenance.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Electrical Work</h3>
+            <p>
+              Certified electrical services from appliance setup to wiring and
+              safety checks, ensuring a secure and efficient home.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="container stats-container">
+        <div class="stat-item">
+          <div class="stat-number">3,200+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-number">2,850+</div>
+          <div class="stat-label">Satisfied Customers</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Years in Business</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-number">99%</div>
+          <div class="stat-label">Customer Satisfaction</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Simple 4-Step Process</h2>
+          <p>Getting quality service has never been easier</p>
+        </div>
+
+        <div class="steps-container">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Book an Appointment</h3>
+            <p>Contact us online or by phone to schedule your service time.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Receive Expert Guidance</h3>
+            <p>
+              Our specialists provide free consultation and clear cost
+              estimates.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Meet Your Technician</h3>
+            <p>
+              A professional handyman arrives promptly, fully equipped for the
+              job.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Enjoy Hassle-Free Service</h3>
+            <p>
+              Relax while we complete the job with guaranteed quality and
+              support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free Estimate CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Start With a Free, No-Obligation Estimate</h2>
+        <a href="#" class="btn">Request Your Free Quote</a>
+      </div>
+    </section>
+
+    <!-- Discount Offers Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Exclusive Deals for Limited Time</h2>
+          <p>Save big on essential services and seasonal offers</p>
+        </div>
+
+        <div class="offers-grid">
+          <div class="offer-card">
+            <div class="offer-badge">20% OFF</div>
+            <h3>Faucet Installations</h3>
+            <p>Upgrade your bathroom or kitchen with top-quality faucets.</p>
+            <a href="#" class="btn btn-secondary">Grab This Deal</a>
+          </div>
+
+          <div class="offer-card">
+            <div class="offer-badge">30% OFF</div>
+            <h3>Electrical Repairs</h3>
+            <p>Professional troubleshooting and repairs at affordable rates.</p>
+            <a href="#" class="btn btn-secondary">Grab This Deal</a>
+          </div>
+
+          <div class="offer-card">
+            <div class="offer-badge">10% OFF</div>
+            <h3>Full Renovation</h3>
+            <p>
+              Comprehensive home makeover services with a limited-time discount.
+            </p>
+            <a href="#" class="btn btn-secondary">Grab This Deal</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Work With HomeFix Experts?</h2>
+          <p>Delivering trusted service around the clock</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="feature-content">
+              <h3>On-Time, Every Time</h3>
+              <p>We respect your schedule and always show up as promised.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="feature-content">
+              <h3>Qualified Technicians</h3>
+              <p>
+                Our experts are certified, experienced, and customer-focused.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="feature-content">
+              <h3>Emergency Ready</h3>
+              <p>Available 24/7 to handle urgent issues whenever they arise.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <div class="feature-content">
+              <h3>Service Guarantee</h3>
+              <p>
+                Every project is backed by our warranty for your peace of mind.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>About Us</h3>
+            <p>
+              HomeFix Experts specializes in home repair, maintenance, and
+              improvement services, delivering excellence with every project.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="https://tools-pack.netlify.app/" target="_blank"
+                  >Tools Pack</a
+                >
+              </li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact Info</h3>
+            <ul class="footer-links footer-contact">
+              <li><i class="fas fa-phone"></i> +1 800-456-7890</li>
+              <li><i class="fas fa-envelope"></i> support@homefix.com</li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 45 Service Lane, Downtown
+                City, ST 12345
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Free Estimate</h3>
+            <p>
+              Call us today for a free consultation and estimate on your next
+              project.
+            </p>
+            <div class="footer-phone">
+              <i class="fas fa-phone"></i> +62-9999-8888
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>© 2025 HomeFix Experts. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .querySelector(".mobile-menu-btn")
+        .addEventListener("click", function () {
+          document.querySelector(".nav-menu").classList.toggle("active");
+        });
+
+      const counters = document.querySelectorAll(".stat-number");
+      const speed = 200; // bigger = slower
+
+      const animateCounters = () => {
+        counters.forEach((counter) => {
+          const text = counter.innerText.trim();
+          const suffix = text.replace(/[0-9,]/g, ""); // keep + or %
+          const target = parseInt(text.replace(/[^\d]/g, "")); // remove all non-digits
+          let count = 0;
+
+          const updateCount = () => {
+            const increment = Math.ceil(target / speed);
+            count += increment;
+
+            if (count < target) {
+              counter.innerText = count.toLocaleString() + suffix;
+              requestAnimationFrame(updateCount);
+            } else {
+              counter.innerText = target.toLocaleString() + suffix;
+            }
+          };
+
+          updateCount();
+        });
+      };
+
+      // Run animation when page loads
+      window.addEventListener("load", animateCounters);
+
+      // Start counter animation when stats section is in view
+      window.addEventListener("scroll", function () {
+        const statsSection = document.querySelector(".stats");
+        const position = statsSection.getBoundingClientRect();
+
+        if (position.top < window.innerHeight && position.bottom >= 0) {
+          animateCounters();
+          window.removeEventListener("scroll", this);
+        }
+      });
+    </script>
+  </body>
+</html>
